@@ -1,29 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-:root { /* this overrides the default colors in the base css */
-    --main-font: 'Poppins', sans-serif;
-	--main-body-bg: #ffffff;
-	--main-body-image: url('https://msg.everypages.com/ghl-login/images/couples-on-top-of-the-mountain.jpg');
-	--main-body-image-overlay: rgb(0 0 0 / 0.60);
-	--main-login-bg: #000000;
-	--login-logo-width: 200px;
-	--login-logo-height: 75px;
-	--login-logo: url('https://msg.everypages.com/ghl-login/images/demo-white-logo.png');
-	--login-heading-color: #f19a14;
-	--login-input-color: #ffffff;
-	--login-label-color: #ffffff;
-    --login-input-bg: transparent;
-	--login-input-border: #cccccc;
-	--login-error-color: #ffffff;
-	--login-forgot-pass-color: #ffffff;
-	--login-button-bg: #f19a14;
-	--login-button-color: #ffffff;
-	--login-button-hover-bg: #99c41c;
-	--login-button-hover-color: #ffffff;
-	--login-foot-note-color: #ffffff;
-	--login-foot-note-link-color: #f19a14;    
-
-}
-
 
 .hl_login--body .container-fluid:before {
   content: '';
