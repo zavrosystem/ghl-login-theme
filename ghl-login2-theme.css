@@ -31,3 +31,20 @@
   height: 100vh;
   background-color: var(--main-body-image-overlay);
 }
+
+/* Container fluid */
+.hl_login .hl_login--body .container-fluid{
+ transform:translatex(4px) translatey(3px);
+}
+
+/* Login  header */
+.undefined .hl_login .hl_login--header{
+ background-color:rgba(0,0,0,0);
+ border-color:rgba(0,0,0,0);
+ height:31px;
+ margin-bottom:0px;
+ padding-bottom:0px;
+ position:relative;
+ top:-107px;
+}
+
