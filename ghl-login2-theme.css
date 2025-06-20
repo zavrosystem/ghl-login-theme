@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
+/* Extra Footer and/or Header instructions. Leave blank for none. */
+    --header-note:''; 
+    --header-note-color:#fff;
+    --footer-note:'';
+    --footer-note-color:#fff;      
+}
+
 .hl_login--body .container-fluid:before {
   content: '';
   position: relative;
