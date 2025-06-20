@@ -23,7 +23,8 @@
 }
 
 /* 🔒 Ocultar completamente el header */
-.hl_login--header {
+.hl_login--header,
+.hl_login--header > div {
   display: none !important;
   height: 0 !important;
   margin: 0 !important;
@@ -32,30 +33,30 @@
 }
 
 /* 🌄 Fondo full screen */
-html, body, .hl_login, .hl_login--body, .container-fluid {
+html, body, .hl_login, .hl_login--body, .hl_login--body .container-fluid {
   height: 100vh !important;
   width: 100vw !important;
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
   font-family: var(--main-font);
 }
 
 .hl_login {
   background-image: var(--main-body-image);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
   position: relative;
+  z-index: 1;
 }
 
 .hl_login--body .container-fluid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  padding: 0;
-  position: relative;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 100% !important;
+  padding: 0 !important;
   z-index: 2;
 }
 
@@ -68,7 +69,7 @@ html, body, .hl_login, .hl_login--body, .container-fluid {
   border-radius: 8px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
   text-align: center;
-  margin: 0 auto;
+  margin: 0 auto !important;
   border: none !important;
   position: relative;
   z-index: 3;
@@ -156,3 +157,4 @@ html, body, .hl_login, .hl_login--body, .container-fluid {
   color: var(--login-foot-note-link-color);
   text-decoration: underline;
 }
+
