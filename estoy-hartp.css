@@ -1,0 +1,171 @@
+:root {
+    --background-image-main: url("https://storage.googleapis.com/msgsndr/Rpsh852pD8SCbL5PXd6Z/media/6854937c6d6448e94df08cce.png"); 
+    --background-image-body: none;
+    --logo-image: url("https://storage.googleapis.com/msgsndr/Rpsh852pD8SCbL5PXd6Z/media/682e1abcf2bfd995eb74413f.png");
+
+    --primary-color: #00FFFF; 
+    --secondary-color: #50e6a7; 
+    --text-color: #ffffff; 
+
+    --input-bg-color: #ffffff; 
+    --input-border-color: #bdbdbd; 
+
+    --blur-effect: blur(20px); 
+    --card-bg-opacity: rgba(25, 25, 25, 0.4); 
+
+    --hover-color: #02c211; 
+
+    --font-size-sm: 0.875rem; 
+    --font-size-lg: 21px; 
+
+    --border-radius: 11px; 
+    --button-min-height: 55px; 
+}
+
+.hl_login {
+    background-image: var(--background-image-main) !important;
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    height: 100vh;
+}
+
+.hl_login--header {
+    display: none !important;
+}
+
+div.hl_login--body {
+    max-width: 450px !important;
+    width: 100% !important;
+    background: rgba(10, 10, 10, 0.65) !important;
+    background-position: top right !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    border-radius: var(--border-radius) !important;
+    backdrop-filter: var(--blur-effect);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    animation: zoomInAnimation 0.6s ease-in-out;
+}
+
+@media only screen and (max-width: 1000px) {
+    div.hl_login--body {
+        margin: 0 !important;
+    }
+    .hl_login {
+        background-position: center left;
+    }
+}
+
+@keyframes zoomInAnimation {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.hl_login--body .card {
+    background-color: transparent !important;
+}
+.hl_login--body .card .card-body {
+    padding: 30px 20px;
+    background-color: transparent;
+}
+
+.hl_login .hl_login--body .form-control {
+    background: var(--input-bg-color) !important;
+    font-size: var(--font-size-sm);
+    color: #2a3135;
+    border: 1px solid var(--input-border-color) !important;
+    border-radius: 5px !important;
+    padding: 10px;
+}
+
+.hl_login--body .heading2::before {
+    content: "" !important;
+    background: var(--logo-image) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    height: 180px !important;
+    width: 180px !important;
+    margin: -30px auto 0 auto;
+    display: block !important;
+}
+
+.hl_login--body .heading2 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-transform: capitalize;
+    text-align: left;
+    font-size: var(--font-size-lg);
+}
+
+/* Botón Rectangular Totalmente Redefinido */
+.hl_login--body .card-body button,
+.hl_login--body .card-body .btn.btn-blue,
+.hl_login--body button.btn,
+button.btn.btn-blue,
+button[type="submit"] {
+    background-color: var(--text-color);
+    color: #000000;
+    min-height: var(--button-min-height);
+    width: 100%;
+    border: none !important;
+    border-radius: 0 !important;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.hl_login--body .card-body button:hover,
+.hl_login--body .card-body .btn.btn-blue:hover,
+.hl_login--body button.btn:hover,
+button.btn.btn-blue:hover {
+    background-color: var(--hover-color) !important;
+    color: var(--text-color) !important;
+}
+
+.hl_login--body .card-body .login-card-heading h2,
+.hl_login--body .card-body .flex span {
+    color: var(--text-color);
+}
+
+#forgot_passowrd_btn,
+.card-body .foot-note .font-semibold,
+.hl_login--body .card-body .font-semibold.cursor-pointer.text-curious-blue-500 {
+    color: #02c211;
+}
+
+.hl_login--body input[type="radio"] {
+    color: var(--primary-color);
+}
+.hl_login--body input.hl-text-input {
+    background: rgba(0, 0, 0, 0.36) !important;
+    color: var(--text-color) !important;
+    border: 0.5px solid var(--card-bg-opacity) !important;
+    border-radius: 7px !important;
+}
+
+.hl_login--body .card-body div .focus\:outline-none {
+    background-image: var(--hover-color);
+    border-style: none;
+    border-radius: 500px !important;
+    color: #020202;
+    font-size: 16px;
+}
+
+.hl_login--body .card .card-body p {
+    display: none;
+}
