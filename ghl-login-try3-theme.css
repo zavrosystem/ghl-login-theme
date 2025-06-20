@@ -1,193 +1,213 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
 :root {
-  --main-font: 'Roboto', sans-serif;
-  --primary-green: #28a745;
+    --background-image-main: url("https://storage.googleapis.com/msgsndr/gO2kDjSoKxWFYhpo2dP8/media/67841dd899f61f5ff16ab336.png"); 
+    /* The main background image for the login page. Applies to the entire viewport. */
+    
+    --background-image-body: url("https://storage.googleapis.com/msgsndr/gO2kDjSoKxWFYhpo2dP8/media/6784255e69da5fbed1234f27.png");
+    /* The background image for the login box body. Adds a visual texture to the login form. */
+    
+    --logo-image: url("https://yt3.ggpht.com/NBy6YQUJhcgLl9O4Yon6ly3kB7xiUfig5SYxV7NECXBp0fDhyk8V2bjElCwUrPLMIX6zf-MY1Q=s48-c-k-c0x00ffffff-no-rj");
+    /* The logo image displayed above the login form heading. Typically, a company or brand logo. */
+
+    /* Primary and Secondary Colors */
+    --primary-color: #00FFFF; 
+    /* Primary accent color used for highlights, hover effects, and focus indicators. */
+    
+    --secondary-color: #50e6a7; 
+    /* Secondary accent color for buttons and other prominent elements. */
+
+    --text-color: #ffffff; 
+    /* The main text color used throughout the login page for headings, labels, and other text content. */
+
+    /* Input Field Styles */
+    --input-bg-color: #ffffff; 
+    /* Background color for input fields, ensuring readability and contrast. */
+    
+    --input-border-color: #bdbdbd; 
+    /* Border color for input fields, providing a subtle boundary around inputs. */
+
+    /* Effects and Opacity */
+    --blur-effect: blur(20px); 
+    /* The blur effect applied to the background of the login box for a frosted glass effect. */
+    
+    --card-bg-opacity: rgba(255, 255, 255, 0.08); 
+    /* Background color with opacity for the login box's border. Helps blend the design. */
+
+    /* Interactive States */
+    --hover-color: #00FFFF; 
+    /* The color applied to buttons and other elements when hovered over. Matches the primary color. */
+
+    /* Font Sizes */
+    --font-size-sm: 0.875rem; 
+    /* Font size for smaller text elements, such as input placeholders and labels. */
+    
+    --font-size-lg: 21px; 
+    /* Font size for larger text elements, such as headings. */
+
+    /* Dimensions */
+    --border-radius: 11px; 
+    /* Border radius for rounded corners on elements like the login box and buttons. */
+
+    --button-min-height: 55px; 
+    /* Minimum height for buttons to ensure consistency and improve usability. */
 }
 
-/* ======== BACKGROUND ======== */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 100vh;
-  background: url('https://storage.googleapis.com/msgsndr/Rpsh852pD8SCbL5PXd6Z/media/6854937c6d6448e94df08cce.png') center center / cover no-repeat;
-  font-family: var(--main-font);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+
+
+/* Background Styles */
+.hl_login {
+    background-image: var(--background-image-main) !important;
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    height: 100vh;
 }
 
-/* ====== REMOVE LEFT SIDE IMAGE ====== */
-.hl_login--body .row > div:first-child {
-  display: none !important;
+/* Header Hiding */
+.hl_login--header {
+    display: none !important;
 }
 
-/* ====== HEADER ADJUSTMENT ====== */
-.undefined .hl_login .hl_login--header {
-  transform: translateX(0px) translateY(-19px);
-  background-color: rgba(135, 135, 135, 0);
-  border-style: none;
+/* Login Box Body */
+div.hl_login--body {
+    max-width: 450px !important;
+    width: 100% !important;
+    background: var(--background-image-body) !important;
+    background-position: top right !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    border-radius: var(--border-radius) !important;
+    backdrop-filter: var(--blur-effect);
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--card-bg-opacity);
+    animation: zoomInAnimation 0.6s ease-in-out;
 }
 
-.hl_login--header a img {
-  transform: translateX(0px) translateY(-19px);
-  min-height: 75px;
-  position: relative;
-  top: -144px;
+/* Responsive Design */
+@media only screen and (max-width: 1000px) {
+    div.hl_login--body {
+        margin: 0 !important;
+    }
+    .hl_login {
+        background-position: center left;
+    }
 }
 
-.hl_login--header a {
-  color: rgba(96, 113, 121, 0);
+/* Zoom-In Animation */
+@keyframes zoomInAnimation {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
-/* ====== CARD WRAPPER and POSITION ====== */
-#app div .undefined .hl_login .hl_login--body .container-fluid .card {
-  margin-bottom: 91px !important;
-  margin-top: 29px !important;
-  box-shadow: 6px 9px 35px 0px rgba(0, 0, 0, 0.8) !important;
-  transform: translateX(0) translateY(0) !important;
-}
-
-/* ====== CARD BASE ====== */
+/* Card Styles */
 .hl_login--body .card {
-  margin: auto !important;
-  width: 100%;
-  max-width: 600px !important;
-  min-height: 520px !important;
-  padding: 40px 30px !important;
-  background: rgba(0, 0, 0, 0.65) !important;
-  backdrop-filter: blur(15px) !important;
-  -webkit-backdrop-filter: blur(15px) !important;
-  border-radius: 16px !important;
-  border: none !important;
-  color: #ffffff !important;
-  text-align: center !important;
+    background-color: transparent !important;
 }
-
-/* ====== CARD INNER ====== */
 .hl_login--body .card .card-body {
-  padding-top: 47px !important;
-  transform: translateY(15px);
+    padding: 50px 20px;
+    background-color: transparent;
 }
 
-/* ====== LOGO TOP (más grande) ====== */
-.hl_login--body .card::before {
-  content: '';
-  display: block;
-  height: 80px;
-  width: 100%;
-  background: url('https://storage.googleapis.com/msgsndr/Rpsh852pD8SCbL5PXd6Z/media/682e1abcf2bfd995eb74413f.png') center no-repeat;
-  background-size: 160px auto;
-  margin: 0 auto 10px;
+/* Input Fields */
+.hl_login .hl_login--body .form-control {
+    background: var(--input-bg-color) !important;
+    font-size: var(--font-size-sm);
+    color: #2a3135;
+    border: 1px solid var(--input-border-color) !important;
+    border-radius: 5px !important;
+    padding: 10px;
 }
 
-/* ====== HEADINGS ====== */
-.hl_login--body .card h1,
-.hl_login--body .card h2,
-.hl_login--body .card h3 {
-  color: #ffffff !important;
-  font-weight: 700 !important;
-  font-size: 24px !important;
-  margin-bottom: 24px !important;
+/* Logo Styles */
+.hl_login--body .heading2::before {
+    content: "" !important;
+    background: var(--logo-image) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    height: 40px !important;
+    width: 40px !important;
+    margin-bottom: 10px;
+    display: block !important;
+    border-radius: 100% !important;
 }
 
-.card-body .flex span {
-  color: #ffffff !important;
+/* Text Styles */
+.hl_login--body .heading2 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-transform: capitalize;
+    text-align: left;
+    font-size: var(--font-size-lg);
 }
 
-/* ====== INPUTS ====== */
-.hl_login--body input[type="email"],
-.hl_login--body input[type="password"] {
-  background: rgba(255, 255, 255, 0.08) !important;
-  color: #ffffff !important;
-  border-radius: 6px !important;
-  padding: 14px !important;
-  width: 100% !important;
-  margin-bottom: 16px !important;
+/* Button Styles */
+.hl_login .btn.btn-blue,
+.hl_login .btn.btn-blue:active,
+.hl_login .btn.btn-blue:focus {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease-in-out;
+}
+.hl_login .btn.btn-blue:hover {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+    color: var(--text-color);
+}
+.hl_login button {
+    background-color: var(--text-color);
+    color: #000000;
+    min-height: var(--button-min-height);
+}
+.hl_login button:hover {
+    background-color: var(--hover-color) !important;
 }
 
-/* ====== EMAIL ====== */
-#email {
-  background-color: rgba(255,255,255,0.08) !important;
-  background-repeat: no-repeat !important;
-  border-style: none !important;
-  border-width: 6px !important;
-  border-color: rgba(255,255,255,0.07) !important;
-  transform: translateX(0) translateY(0);
-  color: #ffffff !important;
+/* Additional Text Colors */
+.hl_login--body .card-body .login-card-heading h2,
+.hl_login--body .card-body .flex span {
+    color: var(--text-color);
 }
-
-/* ====== PASSWORD ====== */
-#password {
-  transform: translateX(0px) translateY(0px);
-  height: 40px !important;
-  border-style: none !important;
-  border-width: 1px !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
-}
-
-/* ====== RELATIVE CLASS ====== */
-.card-body .form-group .relative {
-  transform: translateX(0px) translateY(0px);
-}
-
-/* ====== FOCUS STATE ====== */
-.card-body div .focus\:outline-none {
-  margin-top: 26px !important;
-  min-height: 46px !important;
-  background-color: #03c21d !important;
-  transform: translateX(0) translateY(0) !important;
-  font-weight: 700 !important;
-  font-size: 19px !important;
-}
-
-/* ====== PLACEHOLDER ====== */
-.hl_login--body input::placeholder {
-  color: #cccccc !important;
-}
-
-/* ====== BUTTON ====== */
-.hl_login--body .btn-primary {
-  background-color: var(--primary-green) !important;
-  color: #ffffff !important;
-  padding: 14px !important;
-  border: none !important;
-  border-radius: 6px !important;
-  width: 100% !important;
-  font-weight: 600 !important;
-  font-size: 16px !important;
-  text-transform: uppercase !important;
-}
-.hl_login--body .btn-primary:hover {
-  background-color: #1e7e34 !important;
-}
-
-/* ====== FORGOT PASSWORD ====== */
 #forgot_passowrd_btn,
-.hl_login--body .card a {
-  color: #22c851 !important;
-  font-size: 13px !important;
-  float: right;
-  margin-top: -12px;
+.card-body .foot-note .font-semibold,
+.hl_login--body .card-body .font-semibold.cursor-pointer.text-curious-blue-500 {
+    color: var(--primary-color);
 }
 
-/* ====== REMOVE FOOTER ====== */
-.hl_login--footer,
-.card-body > p:last-of-type {
-  display: none !important;
+/* Inputs */
+.hl_login--body input[type="radio"] {
+    color: var(--primary-color);
+}
+.hl_login--body input.hl-text-input {
+    background: rgba(0, 0, 0, 0.36) !important;
+    color: var(--text-color) !important;
+    border: 0.5px solid var(--card-bg-opacity) !important;
+    border-radius: 7px !important;
 }
 
-/* ====== ERROR STYLES ====== */
-.text-danger,
-.invalid-feedback {
-  color: #ffaaaa !important;
+/* Focus Styles */
+.hl_login--body .card-body div .focus\:outline-none {
+    background-image: var(--hover-color);
+    border-style: none;
+    border-radius: 500px !important;
+    color: #020202;
+    font-size: 16px;
 }
 
-/* ====== APP BACKGROUND ====== */
-#app {
-  transform: translateX(0px) translateY(0px);
-  background-color: transparent !important;
+/* Paragraph Text Styles */
+.hl_login--body .card .card-body p {
+    color: var(--text-color);
 }
