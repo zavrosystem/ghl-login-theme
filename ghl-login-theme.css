@@ -2,80 +2,104 @@
 
 :root {
   --main-font: 'Poppins', sans-serif;
+  --main-body-bg: #ffffff;
   --main-body-image: url('https://msg.everypages.com/ghl-login/images/couples-on-top-of-the-mountain.jpg');
-  --main-login-bg: rgba(0, 0, 0, 0.85);
+  --main-body-image-overlay: rgba(0,0,0,0.60);
+  --main-login-bg: #000000;
   --login-logo: url('https://msg.everypages.com/ghl-login/images/demo-white-logo.png');
   --login-logo-width: 200px;
   --login-logo-height: 75px;
-  --login-heading-color: #4ade80;
+  --login-heading-color: #f19a14;
   --login-input-color: #ffffff;
-  --login-label-color: #ffffff;
   --login-input-bg: transparent;
   --login-input-border: #cccccc;
-  --login-error-color: #ff5b5b;
-  --login-forgot-pass-color: #ffffff;
   --login-button-bg: #f19a14;
-  --login-button-color: #ffffff;
   --login-button-hover-bg: #99c41c;
-  --login-button-hover-color: #ffffff;
   --login-foot-note-color: #ffffff;
   --login-foot-note-link-color: #f19a14;
 }
 
-/* 🔒 Ocultar completamente el header */
-.hl_login--header,
-.hl_login--header > div {
+/* Ocultar header pero mantener fondo, tal como en tu versión base */
+.hl_login--header {
   display: none !important;
-  height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
 }
 
-/* 🌄 Fondo full screen */
-html, body, .hl_login, .hl_login--body, .hl_login--body .container-fluid {
-  height: 100vh !important;
-  width: 100vw !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  font-family: var(--main-font);
-}
-
+/* BACKGROUND: imagen con overlay */
 .hl_login {
+  background: var(--main-body-bg);
+  background-size: cover;
+}
+.hl_login--body .container-fluid:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100vh;
   background-image: var(--main-body-image);
-  background-size: cover !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  background-attachment: fixed !important;
-  position: relative;
-  z-index: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.hl_login--body .container-fluid:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--main-body-image-overlay);
 }
 
+/* CONTENEDOR + FORMULARIO centrado (posición original estilo split) */
 .hl_login--body .container-fluid {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  height: 100% !important;
-  padding: 0 !important;
-  z-index: 2;
-}
-
-/* 🖤 Estilizar el card */
-.hl_login--body .card {
-  background: var(--main-login-bg);
-  max-width: 400px;
-  width: 90%;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  margin: 0 auto !important;
-  border: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0;
   position: relative;
-  z-index: 3;
 }
 
-/* Logo */
+.hl_login--body .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--main-login-bg);
+  height: 100vh;
+  max-width: 40%;
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  position: relative;
+  z-index: 10;
+}
+
+.hl_login--body .card::before,
+.hl_login--body .card::after {
+  content: '';
+  position: absolute;
+  left: -100px;
+  border-left: 100px solid transparent;
+  z-index: 9;
+}
+.hl_login--body .card::before {
+  top: 0;
+  border-top: 100px solid var(--main-login-bg);
+}
+.hl_login--body .card::after {
+  bottom: 0;
+  border-bottom: 100px solid var(--main-login-bg);
+}
+
+/* Interior del form (mismo estilo inicial) */
+.hl_login--body .card .card-body {
+  margin-top: 150px;
+  padding: 60px;
+  text-align: left;
+  width: 100%;
+  max-width: 80%;
+  box-sizing: border-box;
+}
+
+/* Logo anterior */
 .hl_login--body .card .login-card-heading:before {
   content: '';
   display: block;
@@ -84,77 +108,54 @@ html, body, .hl_login, .hl_login--body, .hl_login--body .container-fluid {
   height: var(--login-logo-height);
   background-image: var(--login-logo);
   background-size: contain;
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Título */
 .hl_login--body .heading2 {
   font-weight: 600;
   color: var(--login-heading-color);
-  margin-bottom: 20px;
-  font-size: 24px;
+  padding-bottom: 10px;
 }
 
-/* Inputs */
+/* Inputs originales */
 .hl_login--body input {
-  width: 100%;
-  padding: 12px 15px;
-  margin: 10px 0;
   background: var(--login-input-bg);
   border: 1px solid var(--login-input-border);
   color: var(--login-input-color);
-  border-radius: 4px;
+  border-radius: 3px;
   font-size: 14px;
-  box-sizing: border-box;
-}
-
-/* Placeholder */
-.hl_login--body input::placeholder {
-  color: var(--login-input-color);
-  opacity: 0.8;
+  line-height: 20px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
 }
 
 /* Botón */
 .hl_login--body .hl-btn {
   background-color: var(--login-button-bg);
-  color: var(--login-button-color);
-  padding: 15px 0;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 15px 25px;
   width: 100%;
   font-size: 16px;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 4px;
   margin-top: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  transition: .2s;
 }
-
 .hl_login--body .hl-btn:hover {
   background-color: var(--login-button-hover-bg);
-  color: var(--login-button-hover-color);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 5px -5px rgba(0,0,0,.25);
 }
 
-/* Forgot password */
-.hl_login--body .forgot-password {
-  font-size: 13px;
-  color: var(--login-forgot-pass-color);
-  display: block;
-  text-align: right;
-  margin-top: 5px;
-}
-
-/* Footer note */
+/* Foot note */
 .hl_login--body .foot-note {
   color: var(--login-foot-note-color);
-  font-size: 12px;
+  font-size: 14px;
   margin-top: 20px;
 }
-
 .hl_login--body .foot-note a {
   color: var(--login-foot-note-link-color);
-  text-decoration: underline;
 }
 
