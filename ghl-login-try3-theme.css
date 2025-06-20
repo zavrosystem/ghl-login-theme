@@ -1,0 +1,193 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --main-font: 'Roboto', sans-serif;
+  --primary-green: #28a745;
+}
+
+/* ======== BACKGROUND ======== */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('https://storage.googleapis.com/msgsndr/Rpsh852pD8SCbL5PXd6Z/media/6854937c6d6448e94df08cce.png') center center / cover no-repeat;
+  font-family: var(--main-font);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* ====== REMOVE LEFT SIDE IMAGE ====== */
+.hl_login--body .row > div:first-child {
+  display: none !important;
+}
+
+/* ====== HEADER ADJUSTMENT ====== */
+.undefined .hl_login .hl_login--header {
+  transform: translateX(0px) translateY(-19px);
+  background-color: rgba(135, 135, 135, 0);
+  border-style: none;
+}
+
+.hl_login--header a img {
+  transform: translateX(0px) translateY(-19px);
+  min-height: 75px;
+  position: relative;
+  top: -144px;
+}
+
+.hl_login--header a {
+  color: rgba(96, 113, 121, 0);
+}
+
+/* ====== CARD WRAPPER and POSITION ====== */
+#app div .undefined .hl_login .hl_login--body .container-fluid .card {
+  margin-bottom: 91px !important;
+  margin-top: 29px !important;
+  box-shadow: 6px 9px 35px 0px rgba(0, 0, 0, 0.8) !important;
+  transform: translateX(0) translateY(0) !important;
+}
+
+/* ====== CARD BASE ====== */
+.hl_login--body .card {
+  margin: auto !important;
+  width: 100%;
+  max-width: 600px !important;
+  min-height: 520px !important;
+  padding: 40px 30px !important;
+  background: rgba(0, 0, 0, 0.65) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  border-radius: 16px !important;
+  border: none !important;
+  color: #ffffff !important;
+  text-align: center !important;
+}
+
+/* ====== CARD INNER ====== */
+.hl_login--body .card .card-body {
+  padding-top: 47px !important;
+  transform: translateY(15px);
+}
+
+/* ====== LOGO TOP (más grande) ====== */
+.hl_login--body .card::before {
+  content: '';
+  display: block;
+  height: 80px;
+  width: 100%;
+  background: url('https://storage.googleapis.com/msgsndr/Rpsh852pD8SCbL5PXd6Z/media/682e1abcf2bfd995eb74413f.png') center no-repeat;
+  background-size: 160px auto;
+  margin: 0 auto 10px;
+}
+
+/* ====== HEADINGS ====== */
+.hl_login--body .card h1,
+.hl_login--body .card h2,
+.hl_login--body .card h3 {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 24px !important;
+  margin-bottom: 24px !important;
+}
+
+.card-body .flex span {
+  color: #ffffff !important;
+}
+
+/* ====== INPUTS ====== */
+.hl_login--body input[type="email"],
+.hl_login--body input[type="password"] {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  border-radius: 6px !important;
+  padding: 14px !important;
+  width: 100% !important;
+  margin-bottom: 16px !important;
+}
+
+/* ====== EMAIL ====== */
+#email {
+  background-color: rgba(255,255,255,0.08) !important;
+  background-repeat: no-repeat !important;
+  border-style: none !important;
+  border-width: 6px !important;
+  border-color: rgba(255,255,255,0.07) !important;
+  transform: translateX(0) translateY(0);
+  color: #ffffff !important;
+}
+
+/* ====== PASSWORD ====== */
+#password {
+  transform: translateX(0px) translateY(0px);
+  height: 40px !important;
+  border-style: none !important;
+  border-width: 1px !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* ====== RELATIVE CLASS ====== */
+.card-body .form-group .relative {
+  transform: translateX(0px) translateY(0px);
+}
+
+/* ====== FOCUS STATE ====== */
+.card-body div .focus\:outline-none {
+  margin-top: 26px !important;
+  min-height: 46px !important;
+  background-color: #03c21d !important;
+  transform: translateX(0) translateY(0) !important;
+  font-weight: 700 !important;
+  font-size: 19px !important;
+}
+
+/* ====== PLACEHOLDER ====== */
+.hl_login--body input::placeholder {
+  color: #cccccc !important;
+}
+
+/* ====== BUTTON ====== */
+.hl_login--body .btn-primary {
+  background-color: var(--primary-green) !important;
+  color: #ffffff !important;
+  padding: 14px !important;
+  border: none !important;
+  border-radius: 6px !important;
+  width: 100% !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  text-transform: uppercase !important;
+}
+.hl_login--body .btn-primary:hover {
+  background-color: #1e7e34 !important;
+}
+
+/* ====== FORGOT PASSWORD ====== */
+#forgot_passowrd_btn,
+.hl_login--body .card a {
+  color: #22c851 !important;
+  font-size: 13px !important;
+  float: right;
+  margin-top: -12px;
+}
+
+/* ====== REMOVE FOOTER ====== */
+.hl_login--footer,
+.card-body > p:last-of-type {
+  display: none !important;
+}
+
+/* ====== ERROR STYLES ====== */
+.text-danger,
+.invalid-feedback {
+  color: #ffaaaa !important;
+}
+
+/* ====== APP BACKGROUND ====== */
+#app {
+  transform: translateX(0px) translateY(0px);
+  background-color: transparent !important;
+}
