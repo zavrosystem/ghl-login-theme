@@ -1,19 +1,167 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-:root {
-  --main-body-image: url('https://msg.everypages.com/ghl-login/images/couples-on-top-of-the-mountain.jpg');
+:root { /* this overrides the default colors in the base css */
+    --main-font: 'Poppins', sans-serif;
+	--main-body-bg: #ffffff;
+	--main-body-image: url('https://msg.everypages.com/ghl-login/images/couples-on-top-of-the-mountain.jpg');
+	--main-body-image-overlay: rgb(0 0 0 / 0.60);
+	--main-login-bg: #000000;
+	--login-logo-width: 200px;
+	--login-logo-height: 75px;
+	--login-logo: url('https://msg.everypages.com/ghl-login/images/demo-white-logo.png');
+	--login-heading-color: #f19a14;
+	--login-input-color: #ffffff;
+	--login-label-color: #ffffff;
+    --login-input-bg: transparent;
+	--login-input-border: #cccccc;
+	--login-error-color: #ffffff;
+	--login-forgot-pass-color: #ffffff;
+	--login-button-bg: #f19a14;
+	--login-button-color: #ffffff;
+	--login-button-hover-bg: #99c41c;
+	--login-button-hover-color: #ffffff;
+	--login-foot-note-color: #ffffff;
+	--login-foot-note-link-color: #f19a14;
+/* Extra Footer and/or Header instructions. Leave blank for none. */
+    --header-note:''; 
+    --header-note-color:#fff;
+    --footer-note:'';
+    --footer-note-color:#fff;      
 }
+/* Header Note */
+.hl_login--body .container-fluid>.card .login-card-heading h2.heading2:after {
+    content:var(--header-note);
+    line-height:1.5;
+    font-size:12px;
+    display:block;
+    margin-top:20px;
+    margin-bottom:-10px;
+    color:var(--header-note-color);
+}
+/* Footer Note */ 
+.hl_login--body p.foot-note:before{
+    content:var(--footer-note);
+    color:var(--footer-note-color);
+    font-size:12px;
+    display:block;
+    margin-bottom:20px;
+}
+
+.hl_login--body .card .w-full.border-t.border-gray-300 {
+    border-color: var(--login-input-border) !important;
+}
+
+body .hl_login--body {
+    font-family: var(--main-font);
+}
+.hl_login {
+    background: var(--main-body-bg) !important;
+    background-size:cover;
+}
+.hl_login--header {
+    position: absolute;
+    background: transparent !important;
+    margin-bottom: 0 !important;
+    border: none !important;
+    z-index: 99;
+}
+.hl_login--header .container-fluid a img,
+.hl_login--header .container-fluid a svg {
+    display: none;
+}
+.hl_login--body .container-fluid {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+    padding: 0 !important;
+}
+
+.hl_login--body .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    max-width: 40% !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: var(--main-login-bg) !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+}
+.sidebar-v2-agency .hl_login .hl_login--body .card, 
+.hl_login .hl_login--body .card {
+    border-radius: 0px !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+.hl_login--body .card::before {
+      content: '';
+      position: absolute;
+      left: -100px;
+      top: 0;
+      border-left: 100px solid transparent;
+      border-top: 100px solid var(--main-login-bg);
+      z-index: 9;
+}
+@media screen and (max-width:1024px)
+{
+	/* iPads, etc */ 
+	.hl_login--body .card {
+		height:100vh !important;
+	}
+}
+
+.hl_login--body .card::after {
+    content: '';
+    position: absolute;
+    left: -100px;
+    bottom: 0;
+    border-left: 100px solid transparent;
+    border-bottom: 100px solid var(--main-login-bg);
+    z-index: 9;
+}
+
+.hl_login--body .card .card-body {
+    display: block;
+    margin-top: 150px !important;
+    padding: 60px !important;
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 80% !important;
+    text-align: left;
+}
+@media screen and (max-width:1100px) {
+	.hl_login--body .card .card-body {
+		padding:20px !important;
+	}
+}
+@media screen and (max-height:820px){
+	.hl_login--body .card .card-body {
+		margin-top:2% !important;
+	}
 
 .hl_login--body .container-fluid:before {
   content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
   height: 100vh;
   background-image: var(--main-body-image);
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
-  z-index: -1;
+}
+
+.hl_login--body .container-fluid:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--main-body-image-overlay);
 }
