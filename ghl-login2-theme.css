@@ -1,50 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-/* Extra Footer and/or Header instructions. Leave blank for none. */
-    --header-note:''; 
-    --header-note-color:#fff;
-    --footer-note:'';
-    --footer-note-color:#fff;      
-}
-
-.hl_login--body .container-fluid:before {
-  content: '';
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-  height: 100vh;
-  background-image: var(--main-body-image);
-  background-position: center center;
-  background-repeat: no-repeat;
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('https://msg.everypages.com/ghl-login/images/couples-on-top-of-the-mountain.jpg');
   background-size: cover;
-}
-
-.hl_login--body .container-fluid:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 100vh;
-  background-color: var(--main-body-image-overlay);
 }
-
-/* Container fluid */
-.hl_login .hl_login--body .container-fluid{
- transform:translatex(4px) translatey(3px);
-}
-
-/* Login  header */
-.undefined .hl_login .hl_login--header{
- background-color:rgba(0,0,0,0);
- border-color:rgba(0,0,0,0);
- height:31px;
- margin-bottom:0px;
- padding-bottom:0px;
- position:relative;
- top:-107px;
-}
-
